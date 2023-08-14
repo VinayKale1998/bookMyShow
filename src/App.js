@@ -67,7 +67,7 @@ function App() {
   };
 
 
-  
+
   const dismissHandler = () => {
     setError(null);
   };
@@ -122,7 +122,7 @@ function App() {
       if(bookingConfirm==false||bookingConfirm==true)
       {
   
-        setBookingConfirm=null
+        setBookingConfirm(null)
       }
 
     },3000)
