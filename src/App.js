@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Components/Header";
 import Movies from "./Components/Movies";
 import TimeSlot from "./Components/TimeSlot";
@@ -12,6 +12,7 @@ import { seatActions } from "./Store";
 import ErrorModal from "./UI/ErrorModal";
 import ConfirmationModal from "./UI/ConfirmationModal";
 import { PiPopcornBold } from "react-icons/pi";
+import BookingConfirmModal from "./UI/BookingConfirmModal"
 
 // import axios from "axios";
 
@@ -19,8 +20,10 @@ function App() {
   const movies = useSelector((state) => state.movies);
   const seats = useSelector((state) => state.seats);
   const slots = useSelector((state) => state.slots);
+
   const [errorState, setError] = useState(null);
   const [confirm, setConfirm] = useState(null);
+  const [bookingConfirm, setBookingConfirm] = useState(null);
   const dispatch = useDispatch();
 
   const URL = "https://bookmyshowapi-lya5.onrender.com/api/booking";
@@ -63,9 +66,13 @@ function App() {
     }
   };
 
+
+  
   const dismissHandler = () => {
     setError(null);
   };
+
+
 
   const confirmHandler = async (event) => {
     console.log("in confirm");
@@ -83,11 +90,17 @@ function App() {
         body: JSON.stringify(bookingInfo),
       });
       console.log(response.status);
-      localStorage.clear();
 
-      dispatch(movieActions.clearValue());
-      dispatch(slotActions.clearValue());
-      dispatch(seatActions.clearValue());
+      if (response.status == 200) setBookingConfirm(true);
+      {
+        localStorage.clear();
+
+        dispatch(movieActions.clearValue());
+        dispatch(slotActions.clearValue());
+        dispatch(seatActions.clearValue());
+      }
+
+      if (response.status == 404) setBookingConfirm(false);
     } catch (err) {
       console.log(err);
     }
@@ -95,10 +108,27 @@ function App() {
     setConfirm(null);
   };
 
+
+
   const cancelHandler = (event) => {
     console.log("in cancel");
     setConfirm(null);
   };
+
+
+
+  useEffect(()=>{
+      setTimeout(()=>{
+      if(bookingConfirm==false||bookingConfirm==true)
+      {
+  
+        setBookingConfirm=null
+      }
+
+    },3000)
+  },[bookingConfirm])
+
+
 
   return (
     <div>
@@ -120,6 +150,17 @@ function App() {
         >
           {" "}
         </ConfirmationModal>
+      )}
+
+      {bookingConfirm ==true &&(
+        <BookingConfirmModal
+          title="Booking Confirmed !!!"
+          message="Enjoy your movie"
+          onConfirm={confirmHandler}
+          onCancel={cancelHandler}
+        >
+          {" "}
+        </BookingConfirmModal>
       )}
       <Header></Header>
       <section className="mx-[0.1%]  md:mt-[4vh]  sm:mt-[3vh]  mt-2vh py-[5px] pl-[2vh]  justify-center md:justify-start text-sm transition-all sm:text-md md:text-lg lg:text-2xl xl:text-3xl font-bold md:h-[10vh] h-8vh flex items-center">
