@@ -196,9 +196,8 @@ function App() {
             <LastBooking className="lastbooking w-[40%] sm:w-[35%] bg-gradient-to-r from-rose-400 to-orange-300 px-1 py-2 transition-all"></LastBooking>
           </section>
         </section> */}
-    </section>
 
-     {/* ------------------------for resolutions under large breakpoint */}
+        {/* ------------------------for resolutions under large breakpoint */}
         {lastBooking == null && (
           <section className="lastbooking flex flex-row  items-center justify-center w-[100%]  lg:hidden h-auto   mx-2  my-2   px-1 py-1  ">
             <LastBooking className="lastbooking w-[40%] sm:w-[35%] bg-gradient-to-r from-rose-400 to-orange-300 px-1 py-2 transition-all " data={null}></LastBooking>
@@ -213,6 +212,9 @@ function App() {
             ></LastBooking>
           </section>
         )}
+    </section>
+
+     
 
   {/* ------------------------for resolutions above large breakpoint */}
         {lastBooking == null && (
