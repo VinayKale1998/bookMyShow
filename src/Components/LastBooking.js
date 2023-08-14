@@ -78,7 +78,7 @@ function LastBooking(props) {
               D1:{data.seats.D1}
             </h1>
             <h1 className="text-xs transition-all sm:text-xs md:text-sm lg:text-md xl:text-lg items-center font-bold text-bold">
-              D2:{data.seats.D1}
+              D2:{data.seats.D2}
             </h1>
           </div>
 
