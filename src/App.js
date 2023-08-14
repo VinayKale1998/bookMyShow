@@ -192,11 +192,29 @@ function App() {
             </Button>
           </section>
 
-          <section className=" lastbooking flex flex-row  items-center justify-center w-[100%]  lg:hidden h-auto   mx-2  my-2   px-1 py-1  ">
+          {/* <section className=" lastbooking flex flex-row  items-center justify-center w-[100%]  lg:hidden h-auto   mx-2  my-2   px-1 py-1  ">
             <LastBooking className="lastbooking w-[40%] sm:w-[35%] bg-gradient-to-r from-rose-400 to-orange-300 px-1 py-2 transition-all"></LastBooking>
           </section>
-        </section>
+        </section> */}
+    </section>
 
+     {/* ------------------------for resolutions under large breakpoint */}
+        {lastBooking == null && (
+          <section className="lastbooking flex flex-row  items-center justify-center w-[100%]  lg:hidden h-auto   mx-2  my-2   px-1 py-1  ">
+            <LastBooking className="lastbooking w-[40%] sm:w-[35%] bg-gradient-to-r from-rose-400 to-orange-300 px-1 py-2 transition-all " data={null}></LastBooking>
+          </section>
+        )}
+
+        {lastBooking != null && (
+          <section className="lastbooking flex flex-row  items-center justify-center w-[100%]  lg:hidden h-auto   mx-2  my-2   px-1 py-1 ">
+            <LastBooking
+              className="lastbooking w-[40%] sm:w-[35%] bg-gradient-to-r from-rose-400 to-orange-300 px-1 py-2 transition-all "
+              data={lastBooking}
+            ></LastBooking>
+          </section>
+        )}
+
+  {/* ------------------------for resolutions above large breakpoint */}
         {lastBooking == null && (
           <section className="lastBooking  hidden lg:block   mx-2  my-2   px-1 py-1 lastbooking w-[18%] bg-gradient-to-r from-rose-400 to-orange-300 border border-1 ">
             <LastBooking className="lastBooking " data={null}></LastBooking>
