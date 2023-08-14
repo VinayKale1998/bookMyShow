@@ -13,7 +13,7 @@ function LastBooking(props) {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch("https://bookmyshowapi-lya5.onrender.com");
+        const response = await fetch("https://bookmyshowapi-lya5.onrender.com/api/booking");
         const dataParsed = await response.json();
         setData(dataParsed);
         console.log(data);
