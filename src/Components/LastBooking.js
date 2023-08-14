@@ -30,7 +30,7 @@ function LastBooking(props) {
     } else {
       setData(props.data);
     }
-  });
+  },[props.data]);
 
   return (
     <div className={props.className}>
