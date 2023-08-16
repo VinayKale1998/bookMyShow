@@ -43,7 +43,7 @@ function App() {
         seats.value["D1"] != 0 ||
         seats.value["D2"] != 0)
     ) {
-      console.log("ready to send a request");
+      // console.log("ready to send a request");
       setConfirm(true);
       let timer = setTimeout(async () => {
         setConfirm(null);
@@ -53,7 +53,7 @@ function App() {
         setError("Please Select a Movie!");
       } else if (slots.value == null) {
         setError("Please select a slot! ");
-        console.log(seats.value);
+        // console.log(seats.value);
       } else if (
         seats.value["A1"] == 0 &&
         seats.value["A2"] == 0 &&
@@ -69,7 +69,7 @@ function App() {
 
   //confirm handler to process the confirm button after uses clicks on confirm booking
   const confirmHandler = async (event) => {
-    console.log("in confirm");
+    // console.log("in confirm");
     const bookingInfo = {
       movie: movies.value,
       seats: seats.value,
@@ -83,7 +83,7 @@ function App() {
         },
         body: JSON.stringify(bookingInfo),
       });
-      console.log(response.status);
+      // console.log(response.status);
 
       if (response.status == 200) {
         setBookingConfirm(true);

@@ -32,7 +32,7 @@ const movieSlice = createSlice({
   reducers: {
     setValue(state, action) {
       {
-        console.log("inside reducer false");
+        // console.log("inside reducer false");
         // state.clicked = true;
         if (action.payload.movie == state.value) {
           localStorage.setItem("movie", "");
@@ -63,7 +63,7 @@ const slotSlice = createSlice({
   reducers: {
     setValue(state, action) {
       {
-        console.log("inside reducer false");
+        // console.log("inside reducer false");
         // state.clicked = true;
         if (action.payload.slot == state.value) {
           localStorage.setItem("slot", "");

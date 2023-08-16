@@ -7,7 +7,7 @@ function TimeSlot() {
   const display = useSelector((state) => state.display);
   const slots = useSelector((state) => state.slots);
   const clickHanlder = (event) => {
-    console.log(event.target.innerHTML);
+    // console.log(event.target.innerHTML);
     dispatch(slotActions.setValue({ slot: event.target.innerHTML }));
   };
   return (

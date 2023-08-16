@@ -9,7 +9,7 @@ const Movies = () => {
   const movies = useSelector((state) => state.movies);
 
   const clickHandler = (event) => {
-    console.log(event.target.innerHTML);
+    // console.log(event.target.innerHTML);
     dispatch(movieActions.setValue({ movie: event.target.innerHTML }));
   };
   return (
