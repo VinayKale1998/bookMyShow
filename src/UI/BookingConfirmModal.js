@@ -1,4 +1,4 @@
-import classes from "./ErrorModal.module.css";
+import classes from "./BookingConfirmModal.module.css";
 import Card from "./Card";
 
 import ReactDOM from "react-dom";

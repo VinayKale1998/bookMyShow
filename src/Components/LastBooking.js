@@ -19,7 +19,7 @@ function LastBooking(props) {
         const response = await fetch(URL);
         const dataParsed = await response.json();
         setData(dataParsed);
-        console.log(data);
+        // console.log(data);
       } catch (err) {
         console.log(err.response);
       }
