@@ -128,6 +128,10 @@ function App() {
     }, 2000);
   }, [bookingConfirm]);
 
+
+
+
+  //-----------------------------------------render -------------------------------------------------------
   return (
     <div className="app">
       {/* modal for error display */}
