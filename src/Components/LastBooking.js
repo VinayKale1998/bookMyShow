@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { seats } from "../Store/data";
-import { useSelector } from "react-redux";
+
 import { BiSolidMoviePlay } from "react-icons/bi";
 import { BiTime } from "react-icons/bi";
 import { MdEventSeat } from "react-icons/md";
 import { URL } from "../Store/data";
 
 
-//renders the last booking 
+//renders the last booking details by fetching the backend API for first render, if booking confirmed
+// with 200 status code, the fetch will be bypassed and last booking data will be rendered from local state 
 function LastBooking(props) {
   const [data, setData] = useState({ movie: null, seats: null, slot: null });
 

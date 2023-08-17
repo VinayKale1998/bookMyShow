@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { seatActions } from "../Store";
 import { useDispatch, useSelector } from "react-redux";
 
+
+//reusable component
 function Input(props) {
   const [inputValue, setInputValue] = useState(0);
   const dispatch = useDispatch();

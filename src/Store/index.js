@@ -1,6 +1,8 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 
+//configuration for the redux store split into multiple slices with appropriate actions 
+
 /// redux slice for displaying movies,slots and seat placeholders-----------------------------------------------------------//
 const displaySlice = createSlice({
   name: "displaySlice",
@@ -108,6 +110,9 @@ const seatSlice = createSlice({
 
   }
 });
+
+
+
 
 const store = configureStore({
   reducer: {

@@ -7,3 +7,6 @@ exports.movies = movies;
 exports.slots = slots;
 exports.seats = seats;
 exports.URL = URL;
+
+
+//constains data provided by almabetter as part of the capstone project and URL for the backend API

@@ -43,9 +43,10 @@ function App() {
         seats.value["D1"] != 0 ||
         seats.value["D2"] != 0)
     ) {
-      // console.log("ready to send a request");
+      //sets the confirm state to true after validation so that the confirmation modal is rendered 
       setConfirm(true);
       let timer = setTimeout(async () => {
+        // waits for 20 seconds for user input for confirmation
         setConfirm(null);
       }, 20000);
     } else {
@@ -201,7 +202,7 @@ function App() {
           </section>
         </section> */}
 
-        {/* ------------------------for resolutions under large breakpoint */}
+        {/* -----------------------  last booking section for resolutions under large breakpoint */}
         {lastBooking == null && (
           <section className="lastbooking flex flex-row  items-center justify-center w-[100%]  lg:hidden h-auto   mx-2  my-2   px-1 py-1  ">
             <LastBooking className="lastbooking w-[40%] sm:w-[35%] bg-gradient-to-r from-rose-400 to-orange-300 px-1 py-2 transition-all " data={null}></LastBooking>

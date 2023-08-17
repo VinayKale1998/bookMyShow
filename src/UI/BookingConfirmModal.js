@@ -4,10 +4,14 @@ import Card from "./Card";
 import ReactDOM from "react-dom";
 import React from 'react'
 
+// A booking conirmation modal will render upon 200 status, rendered via react portal 
+
+// acts as a mask from the root div render 
 const Backdrop = (props) => {
   return <div className={classes.backdrop} onClick={props.onDismiss}></div>;
 };
 
+//Overaly which contains confirmation message
 const ModelOverlay = (props) => {
   return (
     <Card className={classes.modal}>

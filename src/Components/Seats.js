@@ -4,10 +4,13 @@ import Input from "../UI/Input";
 
 function Seats() {
   const dispatch = useDispatch();
+  
+  //subscribing to the display and seats state from redux
   const display = useSelector((state) => state.display);
   const seats = useSelector((state) => state.seats);
 
 
+  //renders a list of seat types in a div with each div containing input tags for user inputs on number of seats
   return (
     <div className=" seat-row flex flex-wrap ">
       {display.seats.map((item) => (
