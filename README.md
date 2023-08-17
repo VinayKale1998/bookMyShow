@@ -1,38 +1,47 @@
 # BookMyShow 
-The project involves using NodeJS with express to build APIs for a movie booking application, We have named it BookMyShow. 
+The  fontend project is powered by **React**, **Redux** and **Tailwind CSS**
 
-We have exposed two endpoints as per the requirements of the project:
+- Allows user to make a movie booking by selecting a movie, seat type and number, seat . Also, it provides the last movie booking details
 
-**/api/booking** **:method:GET** : Will retrieve the last booking details from the MongoDB BookMyShow collection and send it to the client with 200 status code, if no booking found; will still return 200 with no bookings found message, 500 status code will be returned with error message in case of server connection error
+ # directory💠
+ We have split the project's src folder into multiple folders as -  Components, Store and UI for ease of management and modularity
 
-**/api/booking** **:method:POST** : Will create a booking document  in the MongoDB collection after schema validation and send 200 status to the client for success and 400 status code incase of error 
+## Components Folder 
 
- API documentation : https://documenter.getpostman.com/view/18971417/2s9Xy6rqP2
+Renders the main booking page with Movies, Seats and Timeslot components and also handles the booking submission with validation and modals
+ Parent: App.js
 
- ## directory💠
-    We have split the schema, the app and the routes into different modules
- - **/src/app**- Contains the code for mongoDB atlas connection and  express app spawning
- - **/src/Models**- Contains the Schema.js file which holds the schema for the Booking object for mongoDB
-- **/src/Routest**- Contains the Routes.js file which holds the code to the API endpoint routes
+**Header.js**
+Renders the header of the bookMyShow page
+
+**LastBooking.js**
+    Renders the last booking details by fetching the backend API upon first render and for subsequent booking in the same session , collects booking confirmation from the local state and renders it to avoid unnecessary calls to the backend - Parent: App.js
+
+**Movies.js**
+
+Renders a list of movies and handles user selection - Parent: App.js
+
+**Seats.js**
+
+Renders a list of seat types with input field for user input  and handles user selection -  Parent: App.js
 
 
-## Reflection💠
+**TimeSlot.js**
+Renders a list of seats and handles user selection - Parent: App.js
 
-- This project gave me a beautiful insight about the intricacies involved with backend the communication process with the front-end, learnt many other things along the way like JWT authentication and authorization(not implemented in this project).
 
-## packages used
-   - body-parser
-   - cors
-   - express
-   - mongoose
-   - nodemon
+## Store Folder
+**index.js**
+Contains the configuration for the Redux store with multiple slices as display, movies , seats and slot with respective actions
+
+
    
 
 ## Built with
 
-<a href='https://nodejs.org/en' ><img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white"  height="25"></a>
-<a href='https://expressjs.com/' ><img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB"  height="25"></a>
-<a href='https://www.mongodb.com/' ><img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white"  height="25"></a>
+<a href='https://react.dev/' ><img src="(https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"  height="25"></a>
+<a href='https://redux.js.org/' ><img src="https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white"  height="25"></a>
+<a href='https://tailwindcss.com/' ><img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"  height="25"></a>
 
 
 ## Deployed on
