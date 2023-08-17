@@ -6,6 +6,8 @@ import { BiTime } from "react-icons/bi";
 import { MdEventSeat } from "react-icons/md";
 import { URL } from "../Store/data";
 
+
+//renders the last booking 
 function LastBooking(props) {
   const [data, setData] = useState({ movie: null, seats: null, slot: null });
 
