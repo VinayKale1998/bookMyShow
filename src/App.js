@@ -14,19 +14,19 @@ import ConfirmationModal from "./UI/ConfirmationModal";
 import { PiPopcornBold } from "react-icons/pi";
 import BookingConfirmModal from "./UI/BookingConfirmModal";
 import { URL } from "./Store/data";
+import { lastBookActions } from "./Store";
 
 function App() {
   // gethering states from redux
   const movies = useSelector((state) => state.movies);
   const seats = useSelector((state) => state.seats);
   const slots = useSelector((state) => state.slots);
+  const lastBooking= useSelector(state=>state.lastBooking)
+
   //initalizing states for errorr and confirmation popups
   const [errorState, setError] = useState(null);
   const [confirm, setConfirm] = useState(null);
   const [bookingConfirm, setBookingConfirm] = useState(null);
-
-  const [lastBooking, setLastBooking] = useState(null);
-  
   const dispatch = useDispatch();
 
   //submitHandler for final booking confirmation //
@@ -88,11 +88,11 @@ function App() {
 
       if (response.status == 200) {
         setBookingConfirm(true);
-        setLastBooking({
+        dispatch( lastBookActions.setLast({
           movie: movies.value,
           seats: seats.value,
           slot: slots.value,
-        });
+        }));
       }
       {
         localStorage.clear();

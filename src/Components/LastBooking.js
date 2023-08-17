@@ -4,13 +4,13 @@ import { BiSolidMoviePlay } from "react-icons/bi";
 import { BiTime } from "react-icons/bi";
 import { MdEventSeat } from "react-icons/md";
 import { URL } from "../Store/data";
-
+import { useSelector } from "react-redux";
 
 //renders the last booking details by fetching the backend API for first render, if booking confirmed
 // with 200 status code, the fetch will be bypassed and last booking data will be rendered from local state 
 function LastBooking(props) {
   const [data, setData] = useState({ movie: null, seats: null, slot: null });
-
+  const lastBooking = useSelector(state=>state.lastBooking)
   //the function inside useeffect will run for the first time and
   // getData will not be called if there is no a page reload, the lastbooking data will be updated with the props gathered from the recent state
   // the if condition inside blocks the fetch if there is data present locally for the last booking
@@ -27,16 +27,16 @@ function LastBooking(props) {
       }
     };
     // if there is no booking data locally, it will fetch from the API
-    if (props.data == null) {
+    if (lastBooking.data == null) {
       getData();
     } else {
-      setData(props.data);
+      setData(lastBooking.data);
     }
-  },[props.data]);
+  },[lastBooking.data]);
 
   return (
     <div className={props.className}>
-      {data.movie == null && props.data == null && (
+      {data.movie == null && lastBooking.data== null && (
         <div>
           <h1 className="text-xs transition-all sm:text-xs md:text-sm lg:text-md xl:text-lg items-center font-bold  px-1 py-1 overflow-visible ">
             No Previous booking found
