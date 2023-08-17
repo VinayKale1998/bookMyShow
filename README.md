@@ -3,19 +3,21 @@ The  fontend project is powered by **React**, **Redux** and **Tailwind CSS**
 
 - Allows user to make a movie booking by selecting a movie, seat type and number, seat . Also, it provides the last movie booking details
 
- # directory💠
+ # Directory💠
  We have split the project's src folder into multiple folders as -  Components, Store and UI for ease of management and modularity
+
+## App.js
+Renders the main booking page with Movies, Seats and Timeslot components , handles booking submission and error and comfiration modal dispaly.
+
 
 ## Components Folder 
 
-Renders the main booking page with Movies, Seats and Timeslot components and also handles the booking submission with validation and modals
- Parent: App.js
 
 **Header.js**
 Renders the header of the bookMyShow page
 
 **LastBooking.js**
-    Renders the last booking details by fetching the backend API upon first render and for subsequent booking in the same session , collects booking confirmation from the local state and renders it to avoid unnecessary calls to the backend - Parent: App.js
+Renders the last booking details by fetching the backend API upon first render and for subsequent booking in the same session , collects booking confirmation from the local state and renders it to avoid unnecessary calls to the backend - Parent: App.js
 
 **Movies.js**
 
@@ -34,8 +36,8 @@ Renders a list of seats and handles user selection - Parent: App.js
 **index.js**
 Contains the configuration for the Redux store with multiple slices as display, movies , seats and slot with respective actions
 
-
-   
+## UI Folder
+Contains reusable UI components : ErrorModal, ConfirmationModal, BookingConfirmModal, Button, Input , Card and respective module.css files
 
 ## Built with
 
