@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 // with 200 status code, the fetch will be bypassed and last booking data will be rendered from local state 
 function LastBooking(props) {
   const [data, setData] = useState({ movie: null, seats: null, slot: null });
+  //gathering the last booking data state
   const lastBooking = useSelector(state=>state.lastBooking)
   //the function inside useeffect will run for the first time and
   // getData will not be called if there is no a page reload, the lastbooking data will be updated with the props gathered from the recent state
@@ -26,7 +27,7 @@ function LastBooking(props) {
         console.log(err.response);
       }
     };
-    // if there is no booking data locally, it will fetch from the API
+    // if there is no booking data in the redux state , it will fetch from the API
     if (lastBooking.data == null) {
       getData();
     } else {

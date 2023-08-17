@@ -88,6 +88,7 @@ function App() {
 
       if (response.status == 200) {
         setBookingConfirm(true);
+        //setting the lastbooking data so that the lasbooking component can use it without sending a  get request
         dispatch( lastBookActions.setLast({
           movie: movies.value,
           seats: seats.value,
