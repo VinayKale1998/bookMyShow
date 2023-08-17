@@ -41,7 +41,7 @@ Contains reusable UI components : ErrorModal, ConfirmationModal, BookingConfirmM
 
 ## Built with
 
-<a href='https://react.dev/' ><img src="(https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"  height="25"></a>
+<a href='https://react.dev/' ><img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"  height="25" alt='react'></a>
 <a href='https://redux.js.org/' ><img src="https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white"  height="25"></a>
 <a href='https://tailwindcss.com/' ><img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"  height="25"></a>
 
